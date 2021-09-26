@@ -1,0 +1,46 @@
+
+.single-speaker{
+ height:600px ;
+background-image: linear-gradient( #0000ffce, #000000ca);
+color:white;
+margin: 15px;
+text-align: center;
+padding: 20px;
+border-radius: 15px 0px 15px 0px;
+position: relative;
+box-shadow: 2px 2px 5px lightblue;
+transition: 0.6s;
+}
+
+.single-speaker img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.speaker-contain{
+    text-align: left;
+}
+
+/* button style  */
+.speaker-btn{
+    width: 100px;
+    padding: 10px 5px;
+    font-size: 18px;
+    background-image: linear-gradient( blue, rgb(40, 14, 155));
+    border-radius: 8px;
+    color:white;
+    border: none;
+    transition: 0.6s;
+}
+
+.speaker-btn:hover{
+    background-image: linear-gradient( #27275a, #3a17da);
+}
+/*---icon icon container --*/
+.speaker-bottom{
+    position: absolute;
+    bottom:15px;
+    text-align: center;
+}

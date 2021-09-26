@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
+import Speaker from '../Speaker/Speaker';
+import './AllSpeakers.css';
 
 const AllSpeakers = () => {
-    const [speaker, setSpeaker]=useState([]);
+    const [speakers, setSpeaker]=useState([]);
 
+    const [cart, setCart]=useState([]);
+
+    const handleSelectedSpeakers =speaker=>{
+        const newCart = [...cart, speaker];
+        setCart(newCart);
+    }
 
     useEffect(()=>{
-        fetch('../../speakers21.JSON')
+        fetch('./speakers21.JSON')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setSpeaker(data))
     },[])
     return (
-        <div>
-            <div>
-                <div>
-                    <div>
-
-                    </div>
-                </div>
+        <div  className="speaker-container">
+            {/* speaker component  */}
+         <div className="all-speaker-container">
+                    <div className="speaker-style" >
+                    {
+                        speakers.map(speaker => <Speaker
+                        key={speaker.name}
+                        handleSelectedSpeakers={handleSelectedSpeakers}
+                        speaker={speaker}
+                        ></Speaker>)
+                    }
+             </div>
+            </div>
+            {/* cart component  */}
+            <div className="selected-speaker-container">
+               <Cart cart={cart}></Cart>
             </div>
         </div>
     );

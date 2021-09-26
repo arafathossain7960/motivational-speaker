@@ -1,0 +1,16 @@
+.speaker-container{
+    display: flex;
+
+}
+.all-speaker-container{
+    width: 70%;
+    margin: 20px 10px;
+    padding:20px 5px ;
+}
+.selected-speaker-container{
+    width: 30%;
+}
+.speaker-style{
+display: grid;
+grid-template-columns:repeat(3, 1fr);
+}
